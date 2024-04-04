@@ -1,0 +1,24 @@
+name: Auto Sign Process
+on:
+  schedule:
+    - cron: "00 7 * * 1-5"
+    - cron: "30 11 * * 1-5"
+env:
+  USER_WEB_URL: ${{ secrets.USER_WEB_URL }}
+  USER_EMAIL: ${{ secrets.USER_EMAIL }}
+  USER_PIN_CODE: ${{ secrets.USER_PIN_CODE }}
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
