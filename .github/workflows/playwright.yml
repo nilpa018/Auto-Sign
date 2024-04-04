@@ -1,12 +1,14 @@
 name: Auto Sign Process
 on:
+  push:
+    branches: [main, master]
   schedule:
-    - cron: "00 7 * * 1-5"
-    - cron: "30 11 * * 1-5"
+    - cron: '00 7 * * 1-5'
+    - cron: '30 11 * * 1-5'
 env:
-  USER_WEB_URL: ${{ secrets.USER_WEB_URL }}
-  USER_EMAIL: ${{ secrets.USER_EMAIL }}
-  USER_PIN_CODE: ${{ secrets.USER_PIN_CODE }}
+    USER_WEB_URL: ${{ secrets.USER_WEB_URL }}
+    USER_EMAIL: ${{ secrets.USER_EMAIL }}
+    USER_PIN_CODE: ${{ secrets.USER_PIN_CODE }}
 jobs:
   test:
     timeout-minutes: 60
