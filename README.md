@@ -54,9 +54,9 @@ Vous devez utiliser des secrets d'environnement dans Github Actions afin de pouv
 
 Voici les 3 secrets à ajouter :  
 
-USER_WEB_URL="https://sitetosign/signin"
-USER_EMAIL="email@domain.com"
-USER_PIN_CODE="mysecretpassword" 
+USER_WEB_URL="https://sitetosign/signin"   
+USER_EMAIL="email@domain.com"   
+USER_PIN_CODE="mysecretpassword"   
 
 ### Ressources
 
