@@ -5,7 +5,8 @@ export default function convertingDates(date) {
 }
 
 export function returnTime(date) {
-  const period = date.getHours() >= 0 && date.getHours() < 13 ? "am" : "pm";
+  // Based on UTC Hours
+  const period = date.getHours() >= 0 && date.getHours() < 11 ? "am" : "pm";
   return period;
 }
 
